@@ -13,7 +13,6 @@ config_version=5
 config/name="NGJ-2024"
 run/main_scene="res://scenes/StartScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -43,6 +42,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+glossary/default_case_sensitive=true
 
 [editor_plugins]
 
