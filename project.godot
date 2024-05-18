@@ -21,10 +21,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"SubaRya": "res://images/visual_novel/characters/SubaRya.dch"
+"SubaRya": "res://images/visual_novel/characters/SubaRya.dch",
+"barBoss": "res://images/visual_novel/characters/barBoss.dch",
+"blabla": "res://images/visual_novel/characters/blabla.dch",
+"main": "res://images/visual_novel/characters/main.dch",
+"星期日": "res://images/visual_novel/characters/星期日.dch"
 }
 directories/dtl_directory={
-"timeline1": "res://timelines/timeline1.dtl"
+"timeline1": "res://timelines/timeline1.dtl",
+"timeline_bg": "res://timelines/timeline_bg.dtl",
+"timeline_port1": "res://timelines/timeline_port1.dtl",
+"timeline_wakeup": "res://timelines/timeline_wakeup.dtl"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -43,6 +50,9 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
+layout/style_list=[]
+layout/default_style="Default"
+variables={}
 
 [editor_plugins]
 
