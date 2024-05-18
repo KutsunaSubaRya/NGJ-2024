@@ -1,0 +1,7 @@
+[background arg="res://images/visual_novel/background/black.jpg" fade="0.0"]
+x/space\: 快轉劇情，滑鼠左鍵\: 劇情下一句
+↑ ↓ ← →\: 解謎模式移動
+Esc\: 解謎模式暫停選單
+join SubaRya 3 [animation="Bounce In" length="0.1" mirrored="true"]
+SubaRya: 學會了嗎 ^ ^ 	
+return

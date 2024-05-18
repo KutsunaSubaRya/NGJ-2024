@@ -59,7 +59,7 @@ offset_right = 88.0
 offset_bottom = 324.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_opq1t")
-text = "遊戲設定"
+text = "按鍵綁定"
 
 [node name="LeaveButton" type="Button" parent="Control/Label"]
 layout_mode = 1

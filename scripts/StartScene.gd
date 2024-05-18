@@ -16,6 +16,7 @@ func _on_start_button_pressed():
 
 func _on_setting_button_pressed():
 	print("setting button clicked.")
+	Dialogic.start("res://timelines/timeline_keybind.dtl")
 	pass # Replace with function body.
 
 
