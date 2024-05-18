@@ -28,10 +28,10 @@ directories/dch_directory={
 "星期日": "res://images/visual_novel/characters/星期日.dch"
 }
 directories/dtl_directory={
-"timeline1": "res://timelines/timeline1.dtl",
 "timeline_bg": "res://timelines/timeline_bg.dtl",
 "timeline_port1": "res://timelines/timeline_port1.dtl",
-"timeline_wakeup": "res://timelines/timeline_wakeup.dtl"
+"timeline_wakeup": "res://timelines/timeline_wakeup.dtl",
+"timeline_wakeup_background": "res://timelines/timeline_wakeup_background.dtl"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -67,6 +67,11 @@ dialogic_default_action={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+"暫停選單"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 
