@@ -1,4 +1,5 @@
 [music path="res://sound/Confession.mp3" fade="0.0" volume="0.0"]
+[background arg="res://images/visual_novel/background/room.jpg" fade="0.0"]
 join main 1
 main: 「陌生的天花板...這裡是哪裡...」
 join 星期日 3
@@ -15,6 +16,7 @@ main: 『無職轉生的世界...嗎...這夢境世界還真他媽厲害啊...�
 main: 『不用當社畜的生活，想想他媽就興奮起來了啊。』
 我從床上起身，收拾了下看起來是我的東西，走出了房門。
 leave main
+[background arg="res://images/visual_novel/background/street.jpg" fade="0.0"]
 門外的陽光就如台灣一般，但雀躍的心情卻讓我覺得陽光格外刺眼。
 往四周瞧瞧，雖說是無職轉生的世界，但我還是馬上發現了非常不合理的地方。
 join main 1
@@ -24,6 +26,7 @@ main: 『是轉移迷宮的城市拉龐啊，這不就是叫我去最下層找�
 main: 星期日先生到底知道多少啊，這就是老是在彈幕我婆我婆的下場嗎…』
 main: 『先去酒館填飽肚子再說吧…可以吐槽的實在太多了…』
 leave main
+[background arg="res://images/visual_novel/background/bar.jpg" fade="0.0"]
 join main 1
 main: 「老闆，給我這個什麼… X5 拉龐牛排的一份。」
 從包包的錢包中拿中這個夢境的貨幣付了錢，在餐桌旁坐了下來。
@@ -40,6 +43,7 @@ main: 「沒…沒什麼，只是想到等下得去公會一趟才行。」
 barBoss: 「是嗎？那加油啊，小哥。」
 main: 「喔…喔。謝謝。」
 leave main
+[background arg="res://images/visual_novel/background/street.jpg" fade="0.0"]
 我迅速將餐點吃完，走出餐館，
 來到陰暗的小巷，並拿出書本翻閱。
 join main 1

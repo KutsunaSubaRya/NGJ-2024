@@ -1,0 +1,7 @@
+[background fade="0.0"]
+join main 1
+main: 應該在這附近了沒錯啊...讓我找找...
+leave main
+[wait time="1.5"]
+[background fade="0.0"]
+return
