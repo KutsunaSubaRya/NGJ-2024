@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://boqqcynv3ihww"]
+
+[ext_resource type="Script" path="res://scripts/StartScene.gd" id="1_m1t1m"]
+[ext_resource type="FontFile" uid="uid://kbcrxqgpdlqi" path="res://fonts/NotoSansTC-Regular.ttf" id="1_r4klt"]
+[ext_resource type="FontFile" uid="uid://b8wknm0rrd5si" path="res://fonts/NotoSansTC-Light.ttf" id="2_opq1t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7tw0p"]
+font = ExtResource("2_opq1t")
+font_size = 56
+shadow_size = 5
+
+[node name="StartScene" type="Node2D"]
+script = ExtResource("1_m1t1m")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.0
+offset_top = 154.0
+offset_right = 167.0
+offset_bottom = 236.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_r4klt")
+text = "遊戲 1 主頁面"
+label_settings = SubResource("LabelSettings_7tw0p")
+
+[node name="StartButton" type="Button" parent="Control/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 160.0
+offset_right = 88.0
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_opq1t")
+text = "開始遊戲"
+
+[node name="SettingButton" type="Button" parent="Control/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 256.0
+offset_right = 88.0
+offset_bottom = 324.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_opq1t")
+text = "遊戲設定"
+
+[node name="LeaveButton" type="Button" parent="Control/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 350.0
+offset_right = 88.0
+offset_bottom = 418.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_opq1t")
+text = "離開遊戲"
+
+[connection signal="pressed" from="Control/Label/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Label/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Control/Label/LeaveButton" to="." method="_on_leave_button_pressed"]
