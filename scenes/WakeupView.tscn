@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqn6qqdm5q10"]
+
+[ext_resource type="Texture2D" uid="uid://dy0cbhanyxwq1" path="res://images/visual_novel/background/wakeup_background.png" id="1_883a2"]
+
+[node name="WakeupView" type="Node2D"]
+
+[node name="WakeupBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.00174, 1)
+texture = ExtResource("1_883a2")
