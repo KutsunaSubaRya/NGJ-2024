@@ -1,3 +1,4 @@
+[background arg="res://images/visual_novel/background/black.jpg" fade="0.0"]
 join main 1
 main: 「這就是傳送口嗎，還真夠隱蔽的啊。難怪沒有人知道。」
 main: 「趁還沒有人來…嘿！」

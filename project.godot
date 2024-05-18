@@ -13,6 +13,7 @@ config_version=5
 config/name="NGJ-2024"
 run/main_scene="res://scenes/StartScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
 
 [autoload]
 
@@ -30,8 +31,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline_bg": "res://timelines/timeline_bg.dtl",
 "timeline_port1": "res://timelines/timeline_port1.dtl",
-"timeline_wakeup": "res://timelines/timeline_wakeup.dtl",
 "timeline_port_selection": "res://timelines/timeline_port_selection.dtl",
+"timeline_wakeup": "res://timelines/timeline_wakeup.dtl",
 "timeline_wakeup_background": "res://timelines/timeline_wakeup_background.dtl"
 }
 text/letter_speed=0.01
