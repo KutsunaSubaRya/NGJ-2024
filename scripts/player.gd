@@ -3,18 +3,22 @@ extends CharacterBody2D
 const SPEED = 100.0
 
 func _physics_process(delta):
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed("ui_right"):
+		velocity = Vector2.RIGHT
+		$AnimatedSprite2D.play("right")
+	if Input.is_action_pressed("ui_left"):
+		velocity = Vector2.LEFT
+		$AnimatedSprite2D.play("left")
+	if Input.is_action_pressed("ui_up"):
+		velocity = Vector2.UP
+		$AnimatedSprite2D.play("up")
+	if Input.is_action_pressed("ui_down"):
+		velocity = Vector2.DOWN
+		$AnimatedSprite2D.play("down")
 
-	var directionX = Input.get_axis("ui_left", "ui_right")
-	var directionY = Input.get_axis("ui_up", "ui_down")
-	
-	if directionX:
-		velocity.x = directionX * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	if directionY:
-		velocity.y = directionY * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-	move_and_slide()
+	var collision = move_and_collide(velocity * SPEED * delta)
+	if collision:
+		var node = collision.get_collider()
+		if node is CharacterBody2D:
+			node.push(velocity)
