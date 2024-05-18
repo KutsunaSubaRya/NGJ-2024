@@ -31,6 +31,7 @@ directories/dtl_directory={
 "timeline1": "res://timelines/timeline1.dtl",
 "timeline_bg": "res://timelines/timeline_bg.dtl",
 "timeline_port1": "res://timelines/timeline_port1.dtl",
+"timeline_port_selection": "res://timelines/timeline_port_selection.dtl",
 "timeline_wakeup": "res://timelines/timeline_wakeup.dtl"
 }
 text/letter_speed=0.01
