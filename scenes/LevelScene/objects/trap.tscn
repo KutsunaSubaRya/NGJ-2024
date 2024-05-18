@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cywdfwm0y5y72"]
+
+[ext_resource type="Script" path="res://scripts/trap.gd" id="1_g8ij8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jqxn"]
+size = Vector2(2, 2)
+
+[node name="trap" type="Area2D"]
+script = ExtResource("1_g8ij8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7jqxn")
+
+[connection signal="body_entered" from="." to="." method="_on_Trap_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Trap_body_exited"]
