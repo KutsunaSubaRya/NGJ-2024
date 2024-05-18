@@ -1,0 +1,4 @@
+[background arg="res://images/visual_novel/background/wakeup_background.png" fade="1.0"]
+[wait_input]
+[clear time="1.0"]
+jump timeline_port1/
