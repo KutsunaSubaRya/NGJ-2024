@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wcx3c4re4dr"
-path="res://.godot/imported/obj.png-bc7bd597a882cf4cd7c4aeeb64ff0fac.ctex"
+uid="uid://buxqysocbyvbn"
+path="res://.godot/imported/level3-odd-tri.png-6660423d2e743646d2dd90f803306bf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obj.png"
-dest_files=["res://.godot/imported/obj.png-bc7bd597a882cf4cd7c4aeeb64ff0fac.ctex"]
+source_file="res://images/voice_wave/triangle_scene/level3-odd-tri.png"
+dest_files=["res://.godot/imported/level3-odd-tri.png-6660423d2e743646d2dd90f803306bf4.ctex"]
 
 [params]
 

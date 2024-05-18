@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level_1_2.gd" id="1_asqtk"]
 [ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="2_j2nbw"]
-[ext_resource type="PackedScene" path="res://scenes/PauseMenu.tscn" id="3_2ajoj"]
+[ext_resource type="PackedScene" uid="uid://bktev4ng1ep6f" path="res://scenes/PauseMenu.tscn" id="3_2ajoj"]
 [ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="4_2stoj"]
 [ext_resource type="Texture2D" uid="uid://cr40r7g2h7k3" path="res://assets/cave.png" id="5_yhvuw"]
 [ext_resource type="PackedScene" uid="uid://dwyohpnvtb02a" path="res://scenes/LevelScene/objects/stone.tscn" id="6_ijokv"]

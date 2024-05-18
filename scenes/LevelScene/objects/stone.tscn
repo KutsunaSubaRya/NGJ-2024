@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwyohpnvtb02a"]
 
 [ext_resource type="Script" path="res://scripts/stone.gd" id="1_bcuhp"]
-[ext_resource type="Texture2D" uid="uid://c4wcx3c4re4dr" path="res://assets/obj.png" id="1_qkoe4"]
+[ext_resource type="Texture2D" uid="uid://cv0i7e7xy315v" path="res://assets/obj_hollow.png" id="2_7dgnf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_20los"]
-atlas = ExtResource("1_qkoe4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx5tk"]
+atlas = ExtResource("2_7dgnf")
 region = Rect2(0, 17, 17, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p605k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_20los")
+"texture": SubResource("AtlasTexture_lx5tk")
 }],
 "loop": true,
 "name": &"default",

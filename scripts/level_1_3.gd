@@ -10,10 +10,10 @@ func _process(_delta):
 		is_pause =  !is_pause
 		
 	if $trap.drop:
-		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-1.tscn")
+		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-2.tscn")
 	elif $exit.occupied:
 		game_end = true
-		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-3.tscn")
+		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-4.tscn")
 
 func _ready():
 	#pass
