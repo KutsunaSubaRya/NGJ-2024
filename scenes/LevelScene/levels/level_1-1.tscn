@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="1_rv1jm"]
 [ext_resource type="Script" path="res://scripts/level_1-1.gd" id="1_y6pb0"]
 [ext_resource type="PackedScene" uid="uid://dwyohpnvtb02a" path="res://scenes/LevelScene/objects/stone.tscn" id="3_a3hnl"]
-[ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="4_566pn"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/exit.tscn" id="4_566pn"]
 [ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="5_x80m4"]
-[ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="6_yvp60"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/trap.tscn" id="6_yvp60"]
 [ext_resource type="PackedScene" uid="uid://bktev4ng1ep6f" path="res://scenes/PauseMenu.tscn" id="7_bsu5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hpph"]

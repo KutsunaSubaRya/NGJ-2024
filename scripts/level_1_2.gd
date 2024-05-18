@@ -2,10 +2,12 @@ extends Node2D
 
 var game_end = false
 var is_pause = true
+var is_restart = false
 var pause_menu
 
 func _process(_delta):
 	pauseMenu()
+	restartLevel()
 	if Input.is_action_just_pressed("暫停選單"):
 		is_pause =  !is_pause
 		
@@ -27,3 +29,8 @@ func pauseMenu():
 		pause_menu.show()
 		Engine.time_scale = 0
 	
+func restartLevel():
+	if is_restart:
+		is_restart = false
+		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-2.tscn")
+	pass
