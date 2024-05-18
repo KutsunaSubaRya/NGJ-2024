@@ -52,5 +52,4 @@ join main 1
 main: 『如果照距離的話…這個，這個，然後…這個…』
 main: 「決定好順序之後...嗯，出發吧。」
 leave main
-[clear time="1.0" portraits="false"]
 jump timeline_wakeup_background/

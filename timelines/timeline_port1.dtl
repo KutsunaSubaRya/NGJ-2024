@@ -32,3 +32,4 @@ main: Ｂ『這樣應該會堵住。』
 move
 main: 『看來這就是傳送口了，走吧。』
 leave main
+return
