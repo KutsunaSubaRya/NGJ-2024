@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://kcugq52q8i7y"]
 
-[ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/player.tscn" id="1_puy8o"]
-[ext_resource type="Texture2D" uid="uid://cr40r7g2h7k3" path="res://assets/cave.png" id="2_vg22w"]
+[ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/objects/player.tscn" id="1_rv1jm"]
+[ext_resource type="Texture2D" uid="uid://cr40r7g2h7k3" path="res://assets/cave.png" id="2_v154p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4uvi"]
-texture = ExtResource("2_vg22w")
+texture = ExtResource("2_v154p")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2826,9 +2826,9 @@ texture = ExtResource("2_vg22w")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q4uvi")
 
-[node name="main" type="Node2D"]
+[node name="level_1-1" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_puy8o")]
+[node name="Player" parent="." instance=ExtResource("1_rv1jm")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
