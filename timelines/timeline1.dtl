@@ -1,0 +1,6 @@
+[background arg="res://images/visual_novel/background/testbg.jpg" fade="0.0"]
+join SubaRya 1 [animation="Bounce In"]
+[wait_input]
+SubaRya 是帥哥~~
+[wait_input]
+join  1
