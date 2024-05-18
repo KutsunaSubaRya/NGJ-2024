@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=3 uid="uid://bmc5nxelfaq42"]
 
-[ext_resource type="Script" path="res://scripts/level_1_2.gd" id="1_jr54b"]
-[ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="1_qopoo"]
-[ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="2_qlguk"]
-[ext_resource type="Texture2D" uid="uid://cr40r7g2h7k3" path="res://assets/cave.png" id="3_hpvlk"]
-[ext_resource type="PackedScene" path="res://scenes/PauseMenu.tscn" id="3_morp1"]
-[ext_resource type="PackedScene" uid="uid://c8swrpgm0gpqc" path="res://scenes/LevelScene/objects/stone.tscn" id="4_ypyor"]
-[ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="5_ue7nn"]
-[ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="6_mmy2j"]
+[ext_resource type="Script" path="res://scripts/level_1_2.gd" id="1_asqtk"]
+[ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="2_j2nbw"]
+[ext_resource type="PackedScene" path="res://scenes/PauseMenu.tscn" id="3_2ajoj"]
+[ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="4_2stoj"]
+[ext_resource type="Texture2D" uid="uid://cr40r7g2h7k3" path="res://assets/cave.png" id="5_yhvuw"]
+[ext_resource type="PackedScene" uid="uid://dwyohpnvtb02a" path="res://scenes/LevelScene/objects/stone.tscn" id="6_ijokv"]
+[ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="7_5vejv"]
+[ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="8_um4o2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac6lq"]
-texture = ExtResource("2_qlguk")
+texture = ExtResource("4_2stoj")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2037,7 +2037,7 @@ texture = ExtResource("2_qlguk")
 31:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gfs8"]
-texture = ExtResource("3_hpvlk")
+texture = ExtResource("5_yhvuw")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4349,15 +4349,19 @@ sources/0 = SubResource("TileSetAtlasSource_ac6lq")
 sources/1 = SubResource("TileSetAtlasSource_7gfs8")
 
 [node name="level_1-2" type="Node2D"]
-script = ExtResource("1_jr54b")
+script = ExtResource("1_asqtk")
 
-[node name="Player" parent="." instance=ExtResource("1_qopoo")]
+[node name="Player" parent="." instance=ExtResource("2_j2nbw")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, 8)
+z_index = 5
 zoom = Vector2(4, 4)
 
-[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("3_morp1")]
+[node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("3_2ajoj")]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = -40.0
+offset_bottom = -32.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_psoro")
@@ -4368,26 +4372,26 @@ layer_1/tile_data = PackedInt32Array(-3, 1048576, 10, -65539, 1048576, 10, -1310
 
 [node name="Stones" type="Node2D" parent="."]
 
-[node name="Stone" parent="Stones" instance=ExtResource("4_ypyor")]
+[node name="Stone" parent="Stones" instance=ExtResource("6_ijokv")]
 position = Vector2(-24, 88)
 
-[node name="Stone2" parent="Stones" instance=ExtResource("4_ypyor")]
+[node name="Stone2" parent="Stones" instance=ExtResource("6_ijokv")]
 position = Vector2(-8, 104)
 
-[node name="Stone3" parent="Stones" instance=ExtResource("4_ypyor")]
+[node name="Stone3" parent="Stones" instance=ExtResource("6_ijokv")]
 position = Vector2(8, 88)
 
-[node name="Stone4" parent="Stones" instance=ExtResource("4_ypyor")]
+[node name="Stone4" parent="Stones" instance=ExtResource("6_ijokv")]
 position = Vector2(-8, 72)
 
-[node name="Stone5" parent="Stones" instance=ExtResource("4_ypyor")]
+[node name="Stone5" parent="Stones" instance=ExtResource("6_ijokv")]
 position = Vector2(-24, 56)
 
-[node name="Stone6" parent="Stones" instance=ExtResource("4_ypyor")]
-position = Vector2(8, 56)
+[node name="Stone6" parent="Stones" instance=ExtResource("6_ijokv")]
+position = Vector2(184, 40)
 
-[node name="exit" parent="." instance=ExtResource("5_ue7nn")]
+[node name="exit" parent="." instance=ExtResource("7_5vejv")]
 position = Vector2(104, 128)
 
-[node name="trap" parent="." instance=ExtResource("6_mmy2j")]
+[node name="trap" parent="." instance=ExtResource("8_um4o2")]
 position = Vector2(120, 40)
