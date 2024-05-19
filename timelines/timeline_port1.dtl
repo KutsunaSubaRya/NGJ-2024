@@ -11,25 +11,37 @@ main: 「這裡是…轉移迷宮內部嗎…」
 main: 「總之，得先找到有光源的地方才行。」
 main: 『但是，得怎麼探索全黑的迷宮才行呢。』
 main: 『摸著牆壁前進？嗯…」
+leave main
 當我沉思許久，重新想到牆壁時…
+join main 1
 main: 「啊！」
 main: 『回音，剛傳送下來時有發出聲音，剛剛重新想到牆壁時，我有想到我右手邊約 2 公尺處有牆壁，這是我透過聲音來判斷的。」
 main: 「啊啊啊啊啊！」
-play the animation
+leave main
 我再次發出聲音，專心聆聽周圍的聲響。
-main: 『這個可行！』
+注意，可以透過聲音傳遞感知實體。
+join main 1
+main: 『恩，這個可行！』
 main: 『接下來，開始探索吧。』
 main: 『得先找到出口或傳送點才行。』
-press WASD to move your character
+leave main
+遊戲介紹\:
+↑ ↓ ← →\: 解謎模式移動
+join main 1
 main: 「這個聲響…是石頭牆壁吧…」
 main: 『這些物體後方還有空間可以探索，但是被這些擋住了。』
 main: 『有什麼方法可以到後面嗎？』
-touch the object
-main: 『！！！這個可以移動！』
-press E or e to push the object
-main: Ａ『這樣就可以了。』
-main: Ｂ『這樣應該會堵住。』
-move
-main: 『看來這就是傳送口了，走吧。』
 leave main
+觸摸並推動中...
+注意\: 移動可以同時推動可推動之實體
+join main 1
+main: 『！！！這個可以移動！』
+leave main
+注意\: 推動實體可能導致路口無法通行
+可以透過 Esc 點擊重新開始當前關卡
+join main 1
+main: 『看來這就是傳送口了，走吧。』
+[sound path="res://sound/Door Opening Sound Effect.mp3" volume="-5.0"]
+leave main
+[wait time="2.5"]
 return

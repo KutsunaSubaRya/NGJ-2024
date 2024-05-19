@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://boqqcynv3ihww"]
+[gd_scene load_steps=6 format=3 uid="uid://boqqcynv3ihww"]
 
 [ext_resource type="Script" path="res://scripts/StartScene.gd" id="1_m1t1m"]
 [ext_resource type="FontFile" uid="uid://kbcrxqgpdlqi" path="res://fonts/NotoSansTC-Regular.ttf" id="1_r4klt"]
 [ext_resource type="FontFile" uid="uid://b8wknm0rrd5si" path="res://fonts/NotoSansTC-Light.ttf" id="2_opq1t"]
+[ext_resource type="Texture2D" uid="uid://cx4gx46adj03a" path="res://images/visual_novel/background/StartBG.png" id="4_ilvpc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7tw0p"]
 font = ExtResource("2_opq1t")
@@ -73,6 +74,12 @@ offset_bottom = 418.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_opq1t")
 text = "離開遊戲"
+
+[node name="StartBg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 324)
+scale = Vector2(0.998267, 1.00155)
+texture = ExtResource("4_ilvpc")
 
 [connection signal="pressed" from="Control/Label/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/Label/SettingButton" to="." method="_on_setting_button_pressed"]

@@ -17,6 +17,8 @@ func _process(_delta):
 		
 	if $exit.occupied:
 		game_end = true
+		Dialogic.start("res://timelines/timeline_complete_level1.dtl")
+		Dialogic.start("res://timelines/timeline_complete_tmp_to_start_scene.dtl")
 		get_tree().change_scene_to_file("res://scenes/StartScene.tscn")
 
 func _ready():

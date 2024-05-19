@@ -1,0 +1,8 @@
+[music path="res://sound/軍樂-軍隊進行曲頒獎樂.mp3" fade="0.0" volume="0.0"]
+[background arg="res://images/visual_novel/background/LevelComplete.png" fade="0.0"]
+join 星期日 3
+星期日: 「恭喜你，也讓我確定選擇你是沒有錯的。」
+星期日: 「我對你很期待。」
+leave 星期日
+[music fade="0.0" volume="0.0"]
+jump timeline_complete_tmp_to_start_scene/

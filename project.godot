@@ -30,6 +30,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "timeline_bg": "res://timelines/timeline_bg.dtl",
+"timeline_complete_level1": "res://timelines/timeline_complete_level1.dtl",
+"timeline_complete_tmp_to_start_scene": "res://timelines/timeline_complete_tmp_to_start_scene.dtl",
 "timeline_keybind": "res://timelines/timeline_keybind.dtl",
 "timeline_port1": "res://timelines/timeline_port1.dtl",
 "timeline_port_selection": "res://timelines/timeline_port_selection.dtl",
