@@ -1583,6 +1583,7 @@ sources/0 = SubResource("TileSetAtlasSource_mv6lm")
 script = ExtResource("1_honaq")
 
 [node name="Player" parent="." instance=ExtResource("2_dk757")]
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)

@@ -8,7 +8,7 @@ func _ready():
 	$AnimatedSprite2D.play("default")
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	if color_vis:
 		match color_type:
 			0:

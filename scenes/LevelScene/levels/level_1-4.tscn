@@ -1576,6 +1576,7 @@ script = ExtResource("1_l2cvb")
 position = Vector2(-8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 zoom = Vector2(4, 4)
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("2_tm642")]
@@ -1621,6 +1622,7 @@ scale = Vector2(6.89629, 8.1156)
 polygon = PackedVector2Array(0, -7.02351, -9.86037, 1.23219, -8.84533, 2.09473, -7.25027, 3.08049, -5.65521, 3.8198, -3.91515, 4.31268, -2.17508, 4.68234, -1.01504, 4.80556, 0, 4.80556, 1.16004, 4.80556, 2.32009, 4.68234, 3.91515, 4.31268, 5.65521, 3.8198, 7.68529, 2.83405, 8.99034, 1.97151, 9.86037, 1.35541)
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_7cxq2")
 format = 2
 layer_0/name = "floor"
@@ -1628,9 +1630,11 @@ layer_1/name = "wall"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="exit" parent="." instance=ExtResource("4_rxs2b")]
+visible = false
 position = Vector2(-136, 120)
 
 [node name="trap" type="Node2D" parent="."]
+visible = false
 position = Vector2(-136, 120)
 
 [node name="trap3" parent="trap" instance=ExtResource("5_83aoa")]
@@ -1754,6 +1758,7 @@ position = Vector2(-32, 0)
 position = Vector2(-32, -32)
 
 [node name="rocks" type="Node2D" parent="." groups=["rocks"]]
+visible = false
 
 [node name="rock" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
 position = Vector2(8, 8)
