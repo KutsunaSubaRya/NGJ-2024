@@ -8,10 +8,10 @@
 [ext_resource type="Script" path="res://scripts/Right_wave.gd" id="5_yu42n"]
 [ext_resource type="PackedScene" uid="uid://dwyohpnvtb02a" path="res://scenes/LevelScene/objects/stone.tscn" id="6_ijokv"]
 [ext_resource type="Script" path="res://scripts/Up_wave.gd" id="6_yhl7s"]
-[ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="7_5vejv"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/exit.tscn" id="7_5vejv"]
 [ext_resource type="Script" path="res://scripts/Down_wave.gd" id="7_sdt71"]
 [ext_resource type="PackedScene" uid="uid://c85vcht1pe6mt" path="res://scenes/LevelScene/objects/rock.tscn" id="8_u3l8d"]
-[ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="8_um4o2"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/trap.tscn" id="8_um4o2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac6lq"]
 texture = ExtResource("4_2stoj")

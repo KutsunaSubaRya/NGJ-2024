@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://wy5w4ycac1l"]
+[gd_scene load_steps=28 format=3 uid="uid://5iyffrwrs3c0"]
 
 [ext_resource type="Texture2D" uid="uid://cws71ud31hpx7" path="res://images/texture/sky/BlueSkySkybox1.png" id="1_xaqq6"]
 [ext_resource type="Texture2D" uid="uid://cak4mvxrd6v75" path="res://images/texture/grass/tilesetgrass.png" id="2_cecbb"]
