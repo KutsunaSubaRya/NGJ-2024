@@ -14,21 +14,14 @@ func _process(_delta):
 			0:
 				$AnimatedSprite2D.play("default")
 			1:
-				$AnimatedSprite2D.play("blue_big")
-			2:
 				$AnimatedSprite2D.play("blue_small")
-			3:
-				$AnimatedSprite2D.play("purple_big")
-			4:
-				$AnimatedSprite2D.play("purple_small")
-			5:
-				$AnimatedSprite2D.play("red_big")
-			6:
-				$AnimatedSprite2D.play("red_small")
-			7:
-				$AnimatedSprite2D.play("yellow_big")
-			8:
+			2:
 				$AnimatedSprite2D.play("yellow_small")
+			3:
+				$AnimatedSprite2D.play("red_small")
+			4:
+				$AnimatedSprite2D.play("purple_big")
+				
 	else:
 		$AnimatedSprite2D.play("default")
 

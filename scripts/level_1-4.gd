@@ -4,7 +4,7 @@ var game_end = false
 var is_pause = true
 var is_restart = false
 var pause_menu
-var lvl_color = 3
+var lvl_color = 4
 
 func _process(_delta):
 	pauseMenu()
