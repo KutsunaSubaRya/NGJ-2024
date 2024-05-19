@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://boqqcynv3ihww"]
+[gd_scene load_steps=7 format=3 uid="uid://boqqcynv3ihww"]
 
 [ext_resource type="Script" path="res://scripts/StartScene.gd" id="1_m1t1m"]
 [ext_resource type="FontFile" uid="uid://kbcrxqgpdlqi" path="res://fonts/NotoSansTC-Regular.ttf" id="1_r4klt"]
 [ext_resource type="FontFile" uid="uid://b8wknm0rrd5si" path="res://fonts/NotoSansTC-Light.ttf" id="2_opq1t"]
 [ext_resource type="Texture2D" uid="uid://cx4gx46adj03a" path="res://images/visual_novel/background/StartBG.png" id="4_ilvpc"]
+[ext_resource type="Script" path="res://scripts/RichTextLabel.gd" id="4_ns57s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7tw0p"]
 font = ExtResource("2_opq1t")
 font_size = 56
+font_color = Color(0, 0, 0, 1)
 shadow_size = 5
 
 [node name="StartScene" type="Node2D"]
@@ -23,54 +25,72 @@ size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -167.0
-offset_top = 154.0
-offset_right = 167.0
-offset_bottom = 236.0
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -198.0
+offset_right = 58.0
+offset_bottom = -116.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_r4klt")
-text = "遊戲 1 主頁面"
+text = "音色"
 label_settings = SubResource("LabelSettings_7tw0p")
 
-[node name="StartButton" type="Button" parent="Control/Label"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 117.0
+offset_right = 698.0
+offset_bottom = 229.0
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+bbcode_enabled = true
+script = ExtResource("4_ns57s")
+
+[node name="StartButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.0
-offset_top = 160.0
+offset_top = 275.0
 offset_right = 88.0
-offset_bottom = 228.0
+offset_bottom = 343.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_opq1t")
 text = "開始遊戲"
 
-[node name="SettingButton" type="Button" parent="Control/Label"]
+[node name="SettingButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.0
-offset_top = 256.0
+offset_top = 371.0
 offset_right = 88.0
-offset_bottom = 324.0
+offset_bottom = 439.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_opq1t")
 text = "按鍵綁定"
 
-[node name="LeaveButton" type="Button" parent="Control/Label"]
+[node name="LeaveButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.0
-offset_top = 350.0
+offset_top = 465.0
 offset_right = 88.0
-offset_bottom = 418.0
+offset_bottom = 533.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_opq1t")
 text = "離開遊戲"
@@ -81,6 +101,6 @@ position = Vector2(576, 324)
 scale = Vector2(0.998267, 1.00155)
 texture = ExtResource("4_ilvpc")
 
-[connection signal="pressed" from="Control/Label/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/Label/SettingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="Control/Label/LeaveButton" to="." method="_on_leave_button_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Control/LeaveButton" to="." method="_on_leave_button_pressed"]
