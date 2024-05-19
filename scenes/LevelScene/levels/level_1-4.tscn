@@ -1,28 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://ch74wlq3fwc2l"]
+[gd_scene load_steps=14 format=3 uid="uid://ch74wlq3fwc2l"]
 
 [ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="1_kkoa3"]
 [ext_resource type="Script" path="res://scripts/level_1-4.gd" id="1_l2cvb"]
 [ext_resource type="PackedScene" uid="uid://bktev4ng1ep6f" path="res://scenes/PauseMenu.tscn" id="2_tm642"]
 [ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="3_exvjo"]
 [ext_resource type="Script" path="res://scripts/Left_wave.gd" id="4_mjuxu"]
-[ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="4_rxs2b"]
-[ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="5_83aoa"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/exit.tscn" id="4_rxs2b"]
+[ext_resource type="PackedScene" path="res://scenes/LevelScene/objects/trap.tscn" id="5_83aoa"]
 [ext_resource type="Script" path="res://scripts/Right_wave.gd" id="5_yshg2"]
 [ext_resource type="Script" path="res://scripts/Up_wave.gd" id="6_8rbq1"]
 [ext_resource type="PackedScene" uid="uid://c85vcht1pe6mt" path="res://scenes/LevelScene/objects/rock.tscn" id="7_tpavj"]
 [ext_resource type="Script" path="res://scripts/Down_wave.gd" id="7_ws2rh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ril3o"]
-size = Vector2(72, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tqn"]
-size = Vector2(72, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6x58"]
-size = Vector2(16, 56)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckh5s"]
-size = Vector2(16, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5wdm"]
 texture = ExtResource("3_exvjo")
@@ -1600,30 +1588,37 @@ offset_bottom = -32.0
 position = Vector2(-48, -32)
 script = ExtResource("4_mjuxu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Left_wave"]
-position = Vector2(4, 24)
-shape = SubResource("RectangleShape2D_ril3o")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Left_wave"]
+position = Vector2(-9.00001, 27)
+rotation = 1.5708
+scale = Vector2(6.89629, 8.1156)
+polygon = PackedVector2Array(0, -7.02351, -9.86037, 1.23219, -8.84533, 2.09473, -7.25027, 3.08049, -5.65521, 3.8198, -3.91515, 4.31268, -2.17508, 4.68234, -1.01504, 4.80556, 0, 4.80556, 1.16004, 4.80556, 2.32009, 4.68234, 3.91515, 4.31268, 5.65521, 3.8198, 7.68529, 2.83405, 8.99034, 1.97151, 9.86037, 1.35541)
 
 [node name="Right_wave" type="Area2D" parent="Player"]
 script = ExtResource("5_yshg2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Right_wave"]
-position = Vector2(44, -8)
-shape = SubResource("RectangleShape2D_f8tqn")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Right_wave"]
+position = Vector2(57, -5)
+rotation = 4.71239
+scale = Vector2(6.89629, 8.1156)
+polygon = PackedVector2Array(0, -7.02351, -9.86037, 1.23219, -8.84533, 2.09473, -7.25027, 3.08049, -5.65521, 3.8198, -3.91515, 4.31268, -2.17508, 4.68234, -1.01504, 4.80556, 0, 4.80556, 1.16004, 4.80556, 2.32009, 4.68234, 3.91515, 4.31268, 5.65521, 3.8198, 7.68529, 2.83405, 8.99034, 1.97151, 9.86037, 1.35541)
 
 [node name="Up_wave" type="Area2D" parent="Player"]
 script = ExtResource("6_8rbq1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Up_wave"]
-position = Vector2(0, -44)
-shape = SubResource("RectangleShape2D_i6x58")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Up_wave"]
+position = Vector2(0, -62)
+rotation = 3.14159
+scale = Vector2(6.89629, 8.1156)
+polygon = PackedVector2Array(0, -7.02351, -9.86037, 1.23219, -8.84533, 2.09473, -7.25027, 3.08049, -5.65521, 3.8198, -3.91515, 4.31268, -2.17508, 4.68234, -1.01504, 4.80556, 0, 4.80556, 1.16004, 4.80556, 2.32009, 4.68234, 3.91515, 4.31268, 5.65521, 3.8198, 7.68529, 2.83405, 8.99034, 1.97151, 9.86037, 1.35541)
 
 [node name="Down_wave" type="Area2D" parent="Player"]
 script = ExtResource("7_ws2rh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Down_wave"]
-position = Vector2(0, 32)
-shape = SubResource("RectangleShape2D_ckh5s")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Down_wave"]
+position = Vector2(0, 52)
+scale = Vector2(6.89629, 8.1156)
+polygon = PackedVector2Array(0, -7.02351, -9.86037, 1.23219, -8.84533, 2.09473, -7.25027, 3.08049, -5.65521, 3.8198, -3.91515, 4.31268, -2.17508, 4.68234, -1.01504, 4.80556, 0, 4.80556, 1.16004, 4.80556, 2.32009, 4.68234, 3.91515, 4.31268, 5.65521, 3.8198, 7.68529, 2.83405, 8.99034, 1.97151, 9.86037, 1.35541)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7cxq2")
