@@ -1,21 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwyohpnvtb02a"]
+[gd_scene load_steps=9 format=3 uid="uid://dwyohpnvtb02a"]
 
 [ext_resource type="Script" path="res://scripts/stone.gd" id="1_bcuhp"]
 [ext_resource type="Texture2D" uid="uid://cv0i7e7xy315v" path="res://assets/obj_hollow.png" id="2_7dgnf"]
+[ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="2_pwx58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oghnm"]
+atlas = ExtResource("2_pwx58")
+region = Rect2(256, 240, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx5tk"]
 atlas = ExtResource("2_7dgnf")
 region = Rect2(0, 17, 17, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikqdo"]
+atlas = ExtResource("2_pwx58")
+region = Rect2(256, 288, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p605k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lx5tk")
+"texture": SubResource("AtlasTexture_oghnm")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx5tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikqdo")
+}],
+"loop": true,
+"name": &"enable",
+"speed": 1.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yh2hp"]
@@ -26,6 +46,7 @@ script = ExtResource("1_bcuhp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p605k")
+animation = &"enable"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yh2hp")

@@ -1588,6 +1588,7 @@ script = ExtResource("1_l2cvb")
 position = Vector2(-8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 zoom = Vector2(4, 4)
 
 [node name="PauseMenu" parent="Player/Camera2D" instance=ExtResource("2_tm642")]
@@ -1626,6 +1627,7 @@ position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_ckh5s")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_7cxq2")
 format = 2
 layer_0/name = "floor"
@@ -1633,9 +1635,11 @@ layer_1/name = "wall"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="exit" parent="." instance=ExtResource("4_rxs2b")]
+visible = false
 position = Vector2(-136, 120)
 
 [node name="trap" type="Node2D" parent="."]
+visible = false
 position = Vector2(-136, 120)
 
 [node name="trap3" parent="trap" instance=ExtResource("5_83aoa")]
@@ -1759,6 +1763,7 @@ position = Vector2(-32, 0)
 position = Vector2(-32, -32)
 
 [node name="rocks" type="Node2D" parent="." groups=["rocks"]]
+visible = false
 
 [node name="rock" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
 position = Vector2(8, 8)
