@@ -4,12 +4,33 @@ var game_end = false
 var is_pause = true
 var is_restart = false
 var pause_menu
+var lvl_color = 6
 
 func _process(_delta):
 	pauseMenu()
 	restartLevel()
 	if Input.is_action_just_pressed("暫停選單"):
 		is_pause =  !is_pause
+	if Input.is_action_pressed("ui_right"):
+		$Player/Down_wave.dir = Vector2.RIGHT
+		$Player/Up_wave.dir = Vector2.RIGHT
+		$Player/Right_wave.dir = Vector2.RIGHT
+		$Player/Left_wave.dir = Vector2.RIGHT
+	if Input.is_action_pressed("ui_left"):
+		$Player/Down_wave.dir = Vector2.LEFT
+		$Player/Up_wave.dir = Vector2.LEFT
+		$Player/Right_wave.dir = Vector2.LEFT
+		$Player/Left_wave.dir = Vector2.LEFT
+	if Input.is_action_pressed("ui_up"):
+		$Player/Down_wave.dir = Vector2.UP
+		$Player/Up_wave.dir = Vector2.UP
+		$Player/Right_wave.dir = Vector2.UP
+		$Player/Left_wave.dir = Vector2.UP
+	if Input.is_action_pressed("ui_down"):
+		$Player/Down_wave.dir = Vector2.DOWN
+		$Player/Up_wave.dir = Vector2.DOWN
+		$Player/Right_wave.dir = Vector2.DOWN
+		$Player/Left_wave.dir = Vector2.DOWN
 		
 	if $trap.drop:
 		get_tree().change_scene_to_file("res://scenes/LevelScene/levels/level_1-2.tscn")

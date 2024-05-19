@@ -1,12 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmc5nxelfaq42"]
+[gd_scene load_steps=19 format=3 uid="uid://bmc5nxelfaq42"]
 
 [ext_resource type="Script" path="res://scripts/level_1_2.gd" id="1_asqtk"]
 [ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="2_j2nbw"]
 [ext_resource type="PackedScene" uid="uid://bktev4ng1ep6f" path="res://scenes/PauseMenu.tscn" id="3_2ajoj"]
 [ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="4_2stoj"]
+[ext_resource type="Script" path="res://scripts/Left_wave.gd" id="4_pj2v8"]
+[ext_resource type="Script" path="res://scripts/Right_wave.gd" id="5_yu42n"]
 [ext_resource type="PackedScene" uid="uid://dwyohpnvtb02a" path="res://scenes/LevelScene/objects/stone.tscn" id="6_ijokv"]
+[ext_resource type="Script" path="res://scripts/Up_wave.gd" id="6_yhl7s"]
 [ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="7_5vejv"]
+[ext_resource type="Script" path="res://scripts/Down_wave.gd" id="7_sdt71"]
+[ext_resource type="PackedScene" uid="uid://c85vcht1pe6mt" path="res://scenes/LevelScene/objects/rock.tscn" id="8_u3l8d"]
 [ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="8_um4o2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctcjl"]
+size = Vector2(72, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ofx4"]
+size = Vector2(72, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bunym"]
+size = Vector2(16, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c0sq"]
+size = Vector2(16, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac6lq"]
 texture = ExtResource("4_2stoj")
@@ -2054,12 +2071,41 @@ offset_top = -32.0
 offset_right = -40.0
 offset_bottom = -32.0
 
+[node name="Left_wave" type="Area2D" parent="Player"]
+position = Vector2(-48, -32)
+script = ExtResource("4_pj2v8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Left_wave"]
+position = Vector2(4, 24)
+shape = SubResource("RectangleShape2D_ctcjl")
+
+[node name="Right_wave" type="Area2D" parent="Player"]
+script = ExtResource("5_yu42n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Right_wave"]
+position = Vector2(44, -8)
+shape = SubResource("RectangleShape2D_7ofx4")
+
+[node name="Up_wave" type="Area2D" parent="Player"]
+script = ExtResource("6_yhl7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Up_wave"]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_bunym")
+
+[node name="Down_wave" type="Area2D" parent="Player"]
+script = ExtResource("7_sdt71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Down_wave"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_8c0sq")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_psoro")
 format = 2
 layer_0/name = "floor"
 layer_1/name = "wall"
-layer_1/tile_data = PackedInt32Array(-3, 1048576, 10, -65539, 1048576, 10, -131075, 589824, 1, 65533, 1048576, 9, 131069, 1048576, 9, 196605, 1048576, 9, 262141, 1048576, 9, 327677, 1441792, 10, 393212, 1048576, 9, 327676, 1441792, 8, 458749, 1048576, 8, 458748, 196608, 7, 524285, 1048576, 10, 589821, 1048576, 10, 655357, 196608, 7, 655359, 2031616, 18, 524287, 1441792, 18, 589823, 1572864, 10, 458752, 851968, 8, 458753, 2031616, 18, 393217, 2031616, 17, 327681, 2031616, 17, 262145, 2031616, 17, 196609, 2031616, 17, 65537, 2031616, 17, 1, 2031616, 17, 131073, 2031616, 17, -65535, 2031616, 17, -131071, 2031616, 17, -196607, 589824, 1, -131074, 524288, 10, -131073, 524288, 10, -196608, 524288, 10, 720893, 196608, 4, 786429, 196608, 4, 851965, 196608, 4, 917501, 196608, 4, 983037, 196608, 4, 1048573, 196608, 6, 1114109, 196608, 7, 1114110, 262144, 7, 1114111, 262144, 7, 1048576, 262144, 7, 1048578, 262144, 7, 1048577, 262144, 7, 1048579, 262144, 7, 1048580, 262144, 7, 1048581, 262144, 7, 1048583, 262144, 7, 1048582, 262144, 7, 1048584, 262144, 7, 1048586, 262144, 7, 1048585, 262144, 7, 1048587, 262144, 7, 1048588, 262144, 7, 983053, 1245184, 8, 917517, 1245184, 8, 851981, 1245184, 8, 786445, 1245184, 8, 720909, 1245184, 8, 655373, 1245184, 8, 589837, 1245184, 8, 524301, 1245184, 8, 458765, 1245184, 8, 393229, 1245184, 8, -131059, 1245184, 8, -65523, 1245184, 8, 13, 1245184, 8, 65549, 1245184, 8, 131085, 1245184, 8, 196621, 1245184, 8, 262157, 1245184, 8, 327693, 1245184, 8, -196595, 655360, 2, -196606, 524288, 1, -196605, 524288, 1, -196604, 524288, 1, -196603, 524288, 1, -196602, 524288, 1, -196601, 524288, 1, -196600, 524288, 1, -196599, 524288, 1, -196598, 524288, 1, -196597, 524288, 1, -196596, 524288, 1, 1048589, 1245184, 5, 917515, 1179648, 11, 786435, 1179648, 11, 65546, 1245184, 11, 65545, 1245184, 11, 65544, 1245184, 11, 196616, 1245184, 11, 196617, 1245184, 11, 196618, 1245184, 11, 131078, 1245184, 11, 65543, 1245184, 11, 196615, 1245184, 11, 786430, 1179648, 11, 655360, 1179648, 11, 786432, 1179648, 11, 983039, 1179648, 11, 524295, 655360, 4, 458759, 655360, 4, 458758, 1179648, 5, 458757, 1179648, 5, 524293, 196608, 3)
+layer_1/tile_data = PackedInt32Array(-3, 1048576, 10, -65539, 1048576, 10, -131075, 589824, 1, 65533, 1048576, 9, 131069, 1048576, 9, 196605, 1048576, 9, 262141, 1048576, 9, 327677, 1441792, 10, 393212, 1048576, 9, 327676, 1441792, 8, 458749, 1048576, 8, 458748, 196608, 7, 524285, 1048576, 10, 589821, 1048576, 10, 655357, 196608, 7, 655359, 2031616, 18, 524287, 1441792, 18, 589823, 1572864, 10, 458752, 851968, 8, 458753, 2031616, 18, 393217, 2031616, 17, 327681, 2031616, 17, 262145, 2031616, 17, 196609, 2031616, 17, 65537, 2031616, 17, 1, 2031616, 17, 131073, 2031616, 17, -65535, 2031616, 17, -131071, 2031616, 17, -196607, 589824, 1, -131074, 524288, 10, -131073, 524288, 10, -196608, 524288, 10, 720893, 196608, 4, 786429, 196608, 4, 851965, 196608, 4, 917501, 196608, 4, 983037, 196608, 4, 1048573, 196608, 6, 1114109, 196608, 7, 1114110, 262144, 7, 1114111, 262144, 7, 1048576, 262144, 7, 1048578, 262144, 7, 1048577, 262144, 7, 1048579, 262144, 7, 1048580, 262144, 7, 1048581, 262144, 7, 1048583, 262144, 7, 1048582, 262144, 7, 1048584, 262144, 7, 1048586, 262144, 7, 1048585, 262144, 7, 1048587, 262144, 7, 1048588, 262144, 7, 983053, 1245184, 8, 917517, 1245184, 8, 851981, 1245184, 8, 786445, 1245184, 8, 720909, 1245184, 8, 655373, 1245184, 8, 589837, 1245184, 8, 524301, 1245184, 8, 458765, 1245184, 8, 393229, 1245184, 8, -131059, 1245184, 8, -65523, 1245184, 8, 13, 1245184, 8, 65549, 1245184, 8, 131085, 1245184, 8, 196621, 1245184, 8, 262157, 1245184, 8, 327693, 1245184, 8, -196595, 655360, 2, -196606, 524288, 1, -196605, 524288, 1, -196604, 524288, 1, -196603, 524288, 1, -196602, 524288, 1, -196601, 524288, 1, -196600, 524288, 1, -196599, 524288, 1, -196598, 524288, 1, -196597, 524288, 1, -196596, 524288, 1, 1048589, 1245184, 5, 524295, 655360, 4, 458759, 655360, 4, 458758, 1179648, 5, 458757, 1179648, 5, 524293, 196608, 3)
 
 [node name="Stones" type="Node2D" parent="."]
 
@@ -2086,3 +2132,59 @@ position = Vector2(104, 128)
 
 [node name="trap" parent="." instance=ExtResource("8_um4o2")]
 position = Vector2(120, 40)
+
+[node name="rocks" type="Node2D" parent="." groups=["rocks"]]
+
+[node name="rock" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(104, 40)
+
+[node name="rock2" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(120, 24)
+
+[node name="rock3" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(136, 24)
+
+[node name="rock4" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(152, 24)
+
+[node name="rock5" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(168, 24)
+
+[node name="rock6" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(168, 56)
+
+[node name="rock7" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(152, 56)
+
+[node name="rock8" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(136, 56)
+
+[node name="rock9" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(120, 56)
+
+[node name="rock10" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(184, 232)
+
+[node name="rock11" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(56, 200)
+
+[node name="rock12" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(8, 200)
+
+[node name="rock13" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(-24, 184)
+
+[node name="rock14" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(8, 168)
+
+[node name="rock15" parent="rocks" groups=["rocks"] instance=ExtResource("8_u3l8d")]
+position = Vector2(-8, 232)
+
+[connection signal="body_entered" from="Player/Left_wave" to="Player/Left_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Left_wave" to="Player/Left_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Right_wave" to="Player/Right_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Right_wave" to="Player/Right_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Up_wave" to="Player/Up_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Up_wave" to="Player/Up_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Down_wave" to="Player/Down_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Down_wave" to="Player/Down_wave" method="_on_Rock_body_exited"]

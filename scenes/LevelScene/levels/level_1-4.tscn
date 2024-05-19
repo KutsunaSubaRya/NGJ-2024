@@ -1,11 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch74wlq3fwc2l"]
+[gd_scene load_steps=18 format=3 uid="uid://ch74wlq3fwc2l"]
 
 [ext_resource type="PackedScene" uid="uid://d04cxkckd32i1" path="res://scenes/LevelScene/objects/player.tscn" id="1_kkoa3"]
 [ext_resource type="Script" path="res://scripts/level_1-4.gd" id="1_l2cvb"]
 [ext_resource type="PackedScene" uid="uid://bktev4ng1ep6f" path="res://scenes/PauseMenu.tscn" id="2_tm642"]
 [ext_resource type="Texture2D" uid="uid://drifrrdejtigx" path="res://assets/black_cave.png" id="3_exvjo"]
+[ext_resource type="Script" path="res://scripts/Left_wave.gd" id="4_mjuxu"]
 [ext_resource type="PackedScene" uid="uid://cfniuyjptn26q" path="res://scenes/LevelScene/objects/exit.tscn" id="4_rxs2b"]
 [ext_resource type="PackedScene" uid="uid://cywdfwm0y5y72" path="res://scenes/LevelScene/objects/trap.tscn" id="5_83aoa"]
+[ext_resource type="Script" path="res://scripts/Right_wave.gd" id="5_yshg2"]
+[ext_resource type="Script" path="res://scripts/Up_wave.gd" id="6_8rbq1"]
+[ext_resource type="PackedScene" uid="uid://c85vcht1pe6mt" path="res://scenes/LevelScene/objects/rock.tscn" id="7_tpavj"]
+[ext_resource type="Script" path="res://scripts/Down_wave.gd" id="7_ws2rh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ril3o"]
+size = Vector2(72, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tqn"]
+size = Vector2(72, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6x58"]
+size = Vector2(16, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckh5s"]
+size = Vector2(16, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5wdm"]
 texture = ExtResource("3_exvjo")
@@ -1568,6 +1585,7 @@ sources/0 = SubResource("TileSetAtlasSource_f5wdm")
 script = ExtResource("1_l2cvb")
 
 [node name="Player" parent="." instance=ExtResource("1_kkoa3")]
+position = Vector2(-8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -1578,11 +1596,39 @@ offset_top = -32.0
 offset_right = -40.0
 offset_bottom = -32.0
 
+[node name="Left_wave" type="Area2D" parent="Player"]
+position = Vector2(-48, -32)
+script = ExtResource("4_mjuxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Left_wave"]
+position = Vector2(4, 24)
+shape = SubResource("RectangleShape2D_ril3o")
+
+[node name="Right_wave" type="Area2D" parent="Player"]
+script = ExtResource("5_yshg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Right_wave"]
+position = Vector2(44, -8)
+shape = SubResource("RectangleShape2D_f8tqn")
+
+[node name="Up_wave" type="Area2D" parent="Player"]
+script = ExtResource("6_8rbq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Up_wave"]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_i6x58")
+
+[node name="Down_wave" type="Area2D" parent="Player"]
+script = ExtResource("7_ws2rh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Down_wave"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_ckh5s")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7cxq2")
 format = 2
 layer_0/name = "floor"
-layer_0/tile_data = PackedInt32Array(65534, 851968, 16, 0, 851968, 16, -65538, 851968, 16, 196604, 851968, 16, 131074, 851968, 16, -196612, 851968, 16, -262142, 917504, 16, 262148, 851968, 16, 393222, 851968, 16, 524296, 851968, 16, 655370, 851968, 16, -327686, 851968, 16, -458760, 851968, 16, -589834, 851968, 16, -720908, 851968, 16, -589836, 851968, 16, -458764, 851968, 16, -327692, 851968, 16, -196620, 851968, 16, -65548, 851968, 16, 65524, 851968, 16, 196596, 851968, 16, 327668, 851968, 16, 458740, 851968, 16, 589812, 851968, 16, 720884, 851968, 16, 720886, 851968, 16, 589816, 851968, 16, 458746, 851968, 16, 327676, 851968, 16, 196606, 851968, 16, -131070, 851968, 16, 327678, 851968, 16, 458748, 851968, 16, 458750, 851968, 16, 589814, 851968, 16, 720888, 851968, 16, 720890, 851968, 16, 589818, 851968, 16, 589820, 851968, 16, 720892, 851968, 16, 720894, 851968, 16, 589822, 851968, 16, 524288, 851968, 16, 655360, 851968, 16, 655362, 851968, 16, 655364, 851968, 16, 655366, 851968, 16, 655368, 851968, 16, 524294, 851968, 16, 524292, 851968, 16, 524290, 851968, 16, 393216, 851968, 16, 393218, 851968, 16, 393220, 851968, 16, 262146, 851968, 16, 262144, 851968, 16, 131072, 851968, 16, 196602, 851968, 16, 327674, 851968, 16, 327672, 851968, 16, 196600, 917504, 16, 327670, 917504, 16, 196598, 851968, 16, 65530, 917504, 16, 65532, 851968, 16, -65540, 851968, 16, -65542, 851968, 16, -65544, 851968, 16, 65528, 851968, 16, 65526, 851968, 16, -65546, 851968, 16, -196614, 851968, 16, -196616, 851968, 16, -196618, 851968, 16, -327690, 851968, 16, -458762, 851968, 16, -327688, 851968, 16, -589832, 851968, 16, -720906, 851968, 16, -720904, 851968, 16, -720902, 851968, 16, -589830, 851968, 16, -458758, 851968, 16, -720900, 851968, 16, -720898, 851968, 16, -786432, 851968, 16, -786430, 851968, 16, -655358, 851968, 16, -524286, 851968, 16, -393216, 917504, 16, -524288, 851968, 16, -655360, 851968, 16, -589826, 851968, 16, -589828, 851968, 16, -458756, 851968, 16, -458754, 851968, 16, -327682, 851968, 16, -327684, 851968, 16, -196610, 851968, 16, -262144, 851968, 16, 458742, 917504, 16, 458744, 851968, 16, 524298, 851968, 16, 393226, 851968, 16, 393224, 851968, 16, 262152, 851968, 16, 262154, 851968, 16, 131082, 851968, 16, 131080, 851968, 16, 8, 851968, 16, 10, 851968, 16, -131064, 851968, 16, -131062, 851968, 16, -262134, 851968, 16, -262136, 851968, 16, -393208, 851968, 16, -393206, 851968, 16, -524278, 851968, 16, -524280, 851968, 16, -655352, 851968, 16, -655350, 851968, 16, -786422, 851968, 16, -786424, 851968, 16, -786426, 851968, 16, -786428, 851968, 16, -655356, 851968, 16, -655354, 851968, 16, -524284, 851968, 16, -524282, 851968, 16, -393210, 851968, 16, -393212, 851968, 16, -262140, 851968, 16, -262138, 851968, 16, -131068, 851968, 16, -131066, 851968, 16, 131076, 851968, 16, 131078, 851968, 16, 6, 851968, 16, 4, 851968, 16, 2, 851968, 16, -131072, 851968, 16, 262150, 851968, 16, -393214, 851968, 16)
 layer_1/name = "wall"
 layer_1/tile_data = PackedInt32Array()
 
@@ -1711,3 +1757,446 @@ position = Vector2(-32, 0)
 
 [node name="trap7" parent="trap" instance=ExtResource("5_83aoa")]
 position = Vector2(-32, -32)
+
+[node name="rocks" type="Node2D" parent="." groups=["rocks"]]
+
+[node name="rock" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 8)
+
+[node name="rock7" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 8)
+
+[node name="rock8" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 8)
+
+[node name="rock9" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 8)
+
+[node name="rock10" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 8)
+
+[node name="rock11" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 8)
+
+[node name="rock12" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 8)
+
+[node name="rock13" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 40)
+
+[node name="rock14" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 40)
+
+[node name="rock15" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 40)
+
+[node name="rock16" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 40)
+
+[node name="rock17" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 40)
+
+[node name="rock18" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 40)
+
+[node name="rock19" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 40)
+
+[node name="rock20" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 40)
+
+[node name="rock21" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 40)
+
+[node name="rock22" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 40)
+
+[node name="rock23" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 40)
+
+[node name="rock24" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 40)
+
+[node name="rock25" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 72)
+
+[node name="rock26" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 72)
+
+[node name="rock27" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 72)
+
+[node name="rock28" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 72)
+
+[node name="rock29" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 72)
+
+[node name="rock30" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 72)
+
+[node name="rock31" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 72)
+
+[node name="rock32" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 72)
+
+[node name="rock33" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 72)
+
+[node name="rock34" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 72)
+
+[node name="rock35" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 72)
+
+[node name="rock36" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 72)
+
+[node name="rock37" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 104)
+
+[node name="rock38" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 104)
+
+[node name="rock39" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 104)
+
+[node name="rock40" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 104)
+
+[node name="rock41" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 104)
+
+[node name="rock42" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 104)
+
+[node name="rock43" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 104)
+
+[node name="rock44" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 104)
+
+[node name="rock45" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 104)
+
+[node name="rock46" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 104)
+
+[node name="rock47" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 104)
+
+[node name="rock48" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 104)
+
+[node name="rock49" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 136)
+
+[node name="rock50" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 136)
+
+[node name="rock51" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 136)
+
+[node name="rock52" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 136)
+
+[node name="rock53" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 136)
+
+[node name="rock54" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 136)
+
+[node name="rock55" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 136)
+
+[node name="rock56" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 136)
+
+[node name="rock57" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 136)
+
+[node name="rock58" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 136)
+
+[node name="rock59" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 136)
+
+[node name="rock60" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 136)
+
+[node name="rock61" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, 168)
+
+[node name="rock62" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, 168)
+
+[node name="rock63" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, 168)
+
+[node name="rock64" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, 168)
+
+[node name="rock65" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, 168)
+
+[node name="rock66" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, 168)
+
+[node name="rock67" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, 168)
+
+[node name="rock68" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 168)
+
+[node name="rock69" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 168)
+
+[node name="rock70" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 168)
+
+[node name="rock71" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 168)
+
+[node name="rock72" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 168)
+
+[node name="rock73" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -24)
+
+[node name="rock74" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -24)
+
+[node name="rock75" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -24)
+
+[node name="rock76" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -24)
+
+[node name="rock77" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -24)
+
+[node name="rock78" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -24)
+
+[node name="rock79" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -24)
+
+[node name="rock80" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -24)
+
+[node name="rock81" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -24)
+
+[node name="rock82" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -24)
+
+[node name="rock83" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -24)
+
+[node name="rock84" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -24)
+
+[node name="rock85" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -56)
+
+[node name="rock86" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -56)
+
+[node name="rock87" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -56)
+
+[node name="rock88" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -56)
+
+[node name="rock89" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -56)
+
+[node name="rock90" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -56)
+
+[node name="rock91" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -56)
+
+[node name="rock92" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -56)
+
+[node name="rock93" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -56)
+
+[node name="rock94" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -56)
+
+[node name="rock95" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -56)
+
+[node name="rock96" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -56)
+
+[node name="rock97" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -88)
+
+[node name="rock98" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -88)
+
+[node name="rock99" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -88)
+
+[node name="rock100" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -88)
+
+[node name="rock101" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -88)
+
+[node name="rock102" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -88)
+
+[node name="rock103" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -88)
+
+[node name="rock104" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -88)
+
+[node name="rock105" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -88)
+
+[node name="rock106" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -88)
+
+[node name="rock107" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -88)
+
+[node name="rock108" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -88)
+
+[node name="rock109" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -120)
+
+[node name="rock110" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -120)
+
+[node name="rock111" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -120)
+
+[node name="rock112" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -120)
+
+[node name="rock113" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -120)
+
+[node name="rock114" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -120)
+
+[node name="rock115" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -120)
+
+[node name="rock116" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -120)
+
+[node name="rock117" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -120)
+
+[node name="rock118" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -120)
+
+[node name="rock119" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -120)
+
+[node name="rock120" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -120)
+
+[node name="rock121" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -152)
+
+[node name="rock122" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -152)
+
+[node name="rock123" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -152)
+
+[node name="rock124" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -152)
+
+[node name="rock125" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -152)
+
+[node name="rock126" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -152)
+
+[node name="rock127" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -152)
+
+[node name="rock128" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -152)
+
+[node name="rock129" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -152)
+
+[node name="rock130" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -152)
+
+[node name="rock131" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -152)
+
+[node name="rock132" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -152)
+
+[node name="rock133" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-184, -184)
+
+[node name="rock134" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-152, -184)
+
+[node name="rock135" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-120, -184)
+
+[node name="rock136" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-88, -184)
+
+[node name="rock137" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-56, -184)
+
+[node name="rock138" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(-24, -184)
+
+[node name="rock139" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(8, -184)
+
+[node name="rock140" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, -184)
+
+[node name="rock141" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, -184)
+
+[node name="rock142" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, -184)
+
+[node name="rock143" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, -184)
+
+[node name="rock144" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, -184)
+
+[node name="rock2" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(40, 8)
+
+[node name="rock3" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(72, 8)
+
+[node name="rock4" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(104, 8)
+
+[node name="rock5" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(136, 8)
+
+[node name="rock6" parent="rocks" groups=["rocks"] instance=ExtResource("7_tpavj")]
+position = Vector2(168, 8)
+
+[connection signal="body_entered" from="Player/Left_wave" to="Player/Left_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Left_wave" to="Player/Left_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Right_wave" to="Player/Right_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Right_wave" to="Player/Right_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Up_wave" to="Player/Up_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Up_wave" to="Player/Up_wave" method="_on_Rock_body_exited"]
+[connection signal="body_entered" from="Player/Down_wave" to="Player/Down_wave" method="_on_Rock_body_entered"]
+[connection signal="body_exited" from="Player/Down_wave" to="Player/Down_wave" method="_on_Rock_body_exited"]
